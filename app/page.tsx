@@ -1,6 +1,6 @@
 import SVG from "./types/01";
 
-let Page = () => {
+const Page = () => {
   return (
     <SVG />
   )

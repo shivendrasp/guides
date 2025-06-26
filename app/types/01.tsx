@@ -1,10 +1,10 @@
 import "./style.css";
 
-let Shape = ({ data, origin }: { data: string, origin: string }) => {
-  let vertices = data.split(" ").reduce((acc: number[][], curr: string, i: number, arr: string[]) => {
+const Shape = ({ data, origin }: { data: string, origin: string }) => {
+  const vertices = data.split(" ").reduce((acc: number[][], curr: string, i: number, arr: string[]) => {
     if (curr === "M" || curr === "L") {
-      let x = parseFloat(arr[i + 1]);
-      let y = parseFloat(arr[i + 2]);
+      const x = parseFloat(arr[i + 1]);
+      const y = parseFloat(arr[i + 2]);
       if (!isNaN(x) && !isNaN(y)) {
         acc.push([x, y]);
       }
@@ -34,12 +34,12 @@ let Shape = ({ data, origin }: { data: string, origin: string }) => {
   );
 };
 
-let data_01 = ["M", 100, 100, "L", 0, 0, "L", 200, 0, "Z"].join(" ");
-let data_02 = ["M", 100, 100, "L", 0, 200, "L", 200, 200, "Z"].join(" ");
-let data_03 = ["M", 100, 100, "L", 0, 0, "L", 0, 200, "Z"].join(" ");
-let data_04 = ["M", 100, 100, "L", 200, 200, "L", 200, 0, "Z"].join(" ");
+const data_01 = ["M", 100, 100, "L", 0, 0, "L", 200, 0, "Z"].join(" ");
+const data_02 = ["M", 100, 100, "L", 0, 200, "L", 200, 200, "Z"].join(" ");
+const data_03 = ["M", 100, 100, "L", 0, 0, "L", 0, 200, "Z"].join(" ");
+const data_04 = ["M", 100, 100, "L", 200, 200, "L", 200, 0, "Z"].join(" ");
 
-let SVG = () => {
+const SVG = () => {
   return (
     <svg width="200px" height="200px" className="svg">
       <Shape data={data_01} origin="top" />
