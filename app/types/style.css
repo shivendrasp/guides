@@ -1,0 +1,138 @@
+:root {
+  --c1: #27f1ff;
+  --c2: #094145; --c20:#09414500;
+  --c3: #232323;
+  --c4: #3c3c3c;
+  --c5: #303030;
+  --c6: #ffffff;
+}
+
+.svg {
+  background-color: var(--c2);
+  box-shadow: inset 0 0 0 1px var(--c1), 0 0 0 1px var(--c1);
+  overflow: visible;
+  cursor: crosshair;
+  animation: svg 1.8s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+  .path {
+    fill: var(--c3);
+    stroke: var(--c4);
+    stroke-width: 2px;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 20;
+    transform-origin: center;
+    animation: path 1.8s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+    &:hover {
+      fill: var(--c5);
+    }
+    .line {
+      stroke: var(--c4);
+      stroke-width: 2px;
+      stroke-dasharray: 0;
+      stroke-dashoffset: 0;
+      transform-origin: center;
+      animation: line 1.8s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+    }
+    .circle {
+      fill: var(--c6);
+      stroke: none;
+      stroke-dashoffset: 0;
+      stroke-dasharray: 0;
+      transform-origin: center;
+      animation: circle 1.8s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+    }
+  }
+}
+
+@keyframes path {
+  0% {
+    transform: scale(1);
+    stroke-width: 2px;
+  }
+  25% {
+    transform: scale(1);
+    stroke-width: 2px;
+  }
+  50% {
+    transform: scale(0.7);
+    fill: var(--c20);
+    stroke: var(--c1);
+    stroke-width: 3px;
+
+  }
+  75% {
+    transform: scale(0.7);
+    fill: var(--c20);
+    stroke: var(--c1);
+    stroke-width: 3px;
+  }
+  100% {
+    transform: scale(1);
+    stroke-width: 2px;
+  }
+}
+
+@keyframes line {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    stroke: var(--c1);
+  }
+  75% {
+    opacity: 1;
+    stroke: var(--c1);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes circle {
+  0% {
+    fill: var(--c6);
+  }
+  25% {
+    fill: var(--c6);
+  }
+  50% {
+    fill: var(--c1);
+  }
+  75% {
+    fill: var(--c1);
+  }
+  100% {
+    fill: var(--c6);
+  }
+}
+
+@keyframes svg {
+  0% {
+    border-radius: 0px;
+    box-shadow: inset 0 0 0 1px var(--c20), 0 0 0 1px var(--c20);
+
+  }
+  25% {
+    border-radius: 0px;
+    box-shadow: inset 0 0 0 1px var(--c20), 0 0 0 1px var(--c20);
+
+  }
+  50% {
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 1px var(--c1), 0 0 0 1px var(--c1);
+
+  }
+  75% {
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 1px var(--c1), 0 0 0 1px var(--c1);
+
+  }
+  100% {
+    border-radius: 0px;
+    box-shadow: inset 0 0 0 1px var(--c2), 0 0 0 1px var(--c2);
+
+  }
+}
